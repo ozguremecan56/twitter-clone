@@ -1,0 +1,19 @@
+{
+  "name": "mytwitterclone",
+  "version": "1.0.0",
+  "description": "my twitter clone project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozguremecan56/twitter-clone.git"
+  },
+  "author": "Ozgur Emecan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ozguremecan56/twitter-clone/issues"
+  },
+  "homepage": "https://github.com/ozguremecan56/twitter-clone#readme"
+}
