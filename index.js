@@ -4,6 +4,8 @@ const User = require('./models/user')
 const bodyParser = require('body-parser')
 
 const express = require('express')
+
+require('./mongo-connection')
 const app = express()
 
 app.use(bodyParser.json())
@@ -18,7 +20,7 @@ app.listen(3000, ()=>{
     console.log("server listening")
 })
 
-require('./mongo-connection')
+
 
 app.set('view engine', 'pug')
 app.get('/', (req, res)=>{

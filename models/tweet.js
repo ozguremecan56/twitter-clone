@@ -5,6 +5,10 @@ const TweetSchema = new mongoose.Schema({
     username:String
 })
 
+const TweetModel = mongoose.model('Tweet', TweetSchema)
+
+module.exports = TweetModel
+
 // module.exports = class Tweet{
 //     constructor(content, user){
 //         this.content = content
