@@ -1,7 +1,6 @@
 module.exports = class Service{
-    constructor(model, dbPath){
+    constructor(model){
         this.model = model
-        this.dbPath = dbPath
 
     }
 
