@@ -1,9 +1,18 @@
 const mongoose = require('mongoose')
 
 const TweetSchema = new mongoose.Schema({
-    content:String,
-    username:String
+    content:{
+        type: String,
+        required:true,
+        minlength:3
+    },
+    user:{
+        type:mongoose.SchemaTypes.ObjectId,
+        ref:'User',
+        autopopulate:true
+    }
 })
+TweetSchema.plugin(require('mongoose-autopopulate'))
 
 const TweetModel = mongoose.model('Tweet', TweetSchema)
 

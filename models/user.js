@@ -1,12 +1,38 @@
 const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema({
-    name: String,
-    pw: String,
-    nick: String,
+    name:{
+        type: String,
+        required: true,
+        minlength:3
+    },
+    pw: {
+        type:String,
+        required:true,
+        minlength: 6
+    },
+    nick:{
+        type:String,
+        required:true,
+        minlength:3
+    },
+    tweets:[{
+        type: mongoose.SchemaTypes.ObjectId,
+        ref:'Tweet',
+        autopopulate:true
+    }]
 })
 
+UserSchema.methods.sendTweet = async function(tweet){
+    this.tweets.push(tweet)
+    tweet.user = this
+    await this.save()
+}
+
+UserSchema.plugin(require('mongoose-autopopulate'))
+
 const UserModel = mongoose.model('User', UserSchema)
+
 
 module.exports = UserModel
 

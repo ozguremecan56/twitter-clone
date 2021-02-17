@@ -26,8 +26,8 @@ router.delete('/:id', async (req, res) => {
 
 router.post('/:id/tweets', async (req, res) => {
   const user = await UserService.find(req.params.id)
-  const tweet = await TweetService.find(req.body.tweet)
-  await UserService.attendMeetup(user, tweet)
+  const tweet = await TweetService.add(req.body)
+  user.sendTweet(tweet)
 
   res.send(user)
 })
