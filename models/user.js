@@ -19,7 +19,12 @@ const UserSchema = new mongoose.Schema({
     tweets:[{
         type: mongoose.SchemaTypes.ObjectId,
         ref:'Tweet',
-        autopopulate:true
+        autopopulate:{
+            maxDepth:1
+
+
+        }
+        
     }]
 })
 

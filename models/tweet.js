@@ -9,7 +9,10 @@ const TweetSchema = new mongoose.Schema({
     user:{
         type:mongoose.SchemaTypes.ObjectId,
         ref:'User',
-        autopopulate:true
+        autopopulate:{
+            maxDepth:1
+
+        }
     }
 })
 TweetSchema.plugin(require('mongoose-autopopulate'))
