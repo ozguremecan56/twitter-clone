@@ -5,7 +5,8 @@ const TweetService = require('../services/tweet-service')
 
 router.get('/all', async (req, res) => {
   const tweets = await TweetService.findAll()
-  res.render('list', { items: tweets })
+  //res.render('list', { items: tweets })
+  res.send(tweets)
 })
 
 router.get('/:id', async (req, res) => {
