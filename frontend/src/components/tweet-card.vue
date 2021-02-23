@@ -6,5 +6,18 @@ export default {
 </script>
 
 <template lang="pug">
-.tweet {{ tweet.content }} {{ tweet.user.nick }}
+article.tweetcard
+  h2 {{ tweet.user.nick }}
+  p {{ tweet.content }}
 </template>
+
+<style scoped>
+.tweetcard {
+  color: whitesmoke;
+  text-align: left;
+  background-color: #243447;
+  padding: 20px;
+  border: grey solid 0.5px;
+  min-width: 200px;
+}
+</style>
